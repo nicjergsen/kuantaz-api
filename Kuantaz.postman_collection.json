@@ -1,0 +1,19 @@
+{
+	"info": {
+		"_postman_id": "ff2d4337-bf6d-4e69-89fa-41da1a65ee9e",
+		"name": "Kuantaz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12640942"
+	},
+	"item": [
+		{
+			"name": "Beneficios por Año",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/beneficios-por-anio"
+			},
+			"response": []
+		}
+	]
+}

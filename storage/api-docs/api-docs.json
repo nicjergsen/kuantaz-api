@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Beneficios (filtrados)",
+        "description": "Información de la API de Beneficios (filtrados)",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000"
+        }
+    ],
+    "paths": {
+        "/api/beneficios-por-anio": {
+            "get": {
+                "tags": [
+                    "Beneficios"
+                ],
+                "summary": "Obtiene un listado de Beneficios por año",
+                "description": "Obtiene un listado de Beneficios por año",
+                "operationId": "57014c70970913b6ea654189eeba00a6",
+                "responses": {
+                    "200": {
+                        "description": "Lista de Beneficios por año",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "year": {
+                                                        "type": "string",
+                                                        "example": "2023"
+                                                    },
+                                                    "num": {
+                                                        "type": "integer",
+                                                        "example": 8
+                                                    },
+                                                    "monto_total_por_anio": {
+                                                        "type": "integer",
+                                                        "example": 295608
+                                                    },
+                                                    "beneficios": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id_programa": {
+                                                                    "type": "integer",
+                                                                    "example": 147
+                                                                },
+                                                                "monto": {
+                                                                    "type": "integer",
+                                                                    "example": 40656
+                                                                },
+                                                                "fecha_recepcion": {
+                                                                    "type": "string",
+                                                                    "example": "09/11/2023"
+                                                                },
+                                                                "fecha": {
+                                                                    "type": "string",
+                                                                    "example": "2023-11-09"
+                                                                },
+                                                                "ano": {
+                                                                    "type": "string",
+                                                                    "example": "2023"
+                                                                },
+                                                                "view": {
+                                                                    "type": "boolean",
+                                                                    "example": true
+                                                                },
+                                                                "ficha": {
+                                                                    "properties": {
+                                                                        "id": {
+                                                                            "type": "integer",
+                                                                            "example": 922
+                                                                        },
+                                                                        "nombre": {
+                                                                            "type": "string",
+                                                                            "example": "Emprende"
+                                                                        },
+                                                                        "id_programa": {
+                                                                            "type": "integer",
+                                                                            "example": 147
+                                                                        },
+                                                                        "url": {
+                                                                            "type": "string",
+                                                                            "example": "emprende"
+                                                                        },
+                                                                        "categoria": {
+                                                                            "type": "string",
+                                                                            "example": "trabajo"
+                                                                        },
+                                                                        "descripcion": {
+                                                                            "type": "string",
+                                                                            "example": "Fondos concursables para nuevos negocios"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error al obtener datos de la API",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "No se pudieron obtener los datos. Error: Error message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
